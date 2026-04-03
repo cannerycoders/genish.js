@@ -51,6 +51,7 @@ window.onload = async function() {
   // db orig: Object.assign( window, exports )
 
   window.poke = gen.ugens.poke
+
   
   const b = teeny.create({ 
     flashColor:'white',
