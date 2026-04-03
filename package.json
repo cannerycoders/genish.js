@@ -10,7 +10,15 @@
     "binaryen": "^106.0.0",
     "codemirror": "^5.61.1",
     "math.js": "^1.1.46",
-    "mathjs": "^10.5.0"
+    "mathjs": "^10.5.0",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@zip.js/zip.js": "^2.7.69",
+    "express": "^5.2.1",
+    "rollup": "^4.45.3"
+  },
+  "scripts": {
+    "build": "node_modules/.bin/rollup ./playground/environment.js -o playground/bundle.js --inlineDynamicImports --no-treeshake -p @rollup/plugin-node-resolve ",
+    "watch": "node_modules/.bin/rollup ./playground/environment.js -o playground/bundle.js --watch -p @rollup/plugin-node-resolve --inlineDynamicImports --no-treeshake"
   },
   "repository": {
     "type": "git",
