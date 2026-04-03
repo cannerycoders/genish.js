@@ -45,7 +45,6 @@ const run = function( ugen ) {
   return node
 }
 
-const data = compiled.data;
-const exports = {data, compile, run }
+const exports = {...compiled, ...dynamic, compile, run }
 export { ugens, compile, run, exports }
 

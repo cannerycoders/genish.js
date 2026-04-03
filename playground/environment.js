@@ -51,15 +51,13 @@ window.onload = async function() {
   // db orig: Object.assign( window, exports )
 
   window.poke = gen.ugens.poke
-
-  
-  const b = teeny.create({ 
+  const b = bitty.create({ 
     flashColor:'white',
     flashTime: 100,
     value: `play( accum(.005) )`
   })
   window.editor = b
-
+  
   window.play = async function( graph, shouldPrintWat=false, shouldDebug=false ) {
     if( window.node !== null ) {
       window.clear()
@@ -166,7 +164,7 @@ const initMenu = function() {
   }
 }
 
-window.teeny.rules = {
+window.bitty.rules = {
   keywords: /\b(new|if|else|do|while|switch|for|of|continue|break|return|typeof|function|var|const|let)(?=[^\w])/g,
 
   numbers: /\b(\d+)/g,
