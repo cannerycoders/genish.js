@@ -18,6 +18,8 @@ window.onload = async function() {
   window.utilities = utilities
   window.gen.utilities = window.utilities
 
+  // db moved here: 
+  Object.assign( window, exports )
   utilities.setupMemory( mem.buffer )
   utilities.createWavetables()
 
@@ -46,7 +48,7 @@ window.onload = async function() {
   window.addEventListener( 'click', beginContext )
 
 
-  Object.assign( window, exports )
+  // db orig: Object.assign( window, exports )
 
   window.poke = gen.ugens.poke
   
