@@ -197,17 +197,16 @@ echo = delay( gain, 11025, 22050 )
 // use 64-bit memory storage for improved timing
 play( [gain, echo] ) 
 
-/****** 100 sine oscillators  *******/
- 
-let size = 100
-b = bus( size, 1/size )
- 
+/****** many sine oscillators  *******/
+// if you play with these numbers, make
+// sure the final frequency doesn't get
+// to high! (not above half the sampling rate)
+let size = 500
 let baseFreq = 80
+let out = cycle( baseFreq )
 for( let i = 0; i < size; i++) {
-  b.connect(
-    cycle( baseFreq )
-  )
-  baseFreq *= 1.035
+  baseFreq *= 1.01
+  out = add( out, cycle( baseFreq ) )
 }
- 
-play( b )
+console.log( 'final freq:', baseFreq )
+play( mul( out, 1/size ) ) 
