@@ -204,7 +204,7 @@ const play = function( ugen, __node ) {
 
 // get wasm as bytes, start downloading as soon as
 // page loads
-fetch( '../dist/main2.wasm')
+fetch( '../dist/main.wasm')
   .then( response => response.arrayBuffer() )
   .then( bytes => wasmbytes = bytes )
 
