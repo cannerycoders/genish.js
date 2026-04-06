@@ -1,3 +1,6 @@
+import  {mainWat} from "./main.wat.js";
+// tlet mainWat = null;
+
 let __wabt = null
 
 let fs = null
@@ -293,7 +296,7 @@ const gen = {
   },
 
   __functionTable() {
-    let mainwat = fs.readFileSync( 'src/main.wat', 'utf-8' ) 
+    let mainwat = mainWat ?? fs.readFileSync( 'src/main.wat', 'utf-8' ) 
   //  let str = `  (table ${this.__functions.length} funcref)
   //  (elem (i32.const 0)
   //`

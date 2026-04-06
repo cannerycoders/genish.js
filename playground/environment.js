@@ -119,7 +119,11 @@ window.onload = async function() {
   }
 
   // problems accessing window scope when using eval...
-  b.subscribe( 'run', txt => ( new Function( txt ))() ); 
+  b.subscribe( 'run', (txt) => 
+    { 
+        const code = new Function( txt );
+        code();
+    }); 
 
   b.subscribe( 'keydown', e => {
     if( e.ctrlKey && e.key === '.' ) {
